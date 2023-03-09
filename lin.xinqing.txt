@@ -1,0 +1,13 @@
+Xinqing Lin
+Period 3
+
+1. -c
+2. -n
+3. 19749
+cat MargeFailedAttempts.txt | sed -E 's/.*(Failed password for root).*/root/' | sort | uniq -c | sort -nk1
+The last line of this gives root 19749
+This captures all the lines that have "Failed password for root", replaces the line with just root, and counts the number of times it appears
+
+4. 189
+cat MargeFailedAttempts.txt | sed -E 's/.*(Failed password for invalid user postgres).*/postgres/' | sort | uniq -c | sort -nk1
+This captures all the lines that have "Failed password for invalid user postgres", replaces the line with just postgres, and counts the number of times it appears
